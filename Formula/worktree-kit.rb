@@ -1,8 +1,8 @@
 class WorktreeKit < Formula
   desc "Per-worktree runner: commands, servers, and DB/Redis isolation for git worktrees"
   homepage "https://github.com/VSN2015/worktree-kit"
-  url "https://github.com/VSN2015/worktree-kit/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "4882688c36535e83aab4bf819f449ea128336dff53affcf60d1559bd7debe0da"
+  url "https://github.com/VSN2015/worktree-kit/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "082a9e50d6871baa19da8400d3b3e1bb370d2ca62154dce4d2fb5eb5f78d4d85"
   license "MIT"
 
   depends_on "yq"
@@ -14,7 +14,6 @@ class WorktreeKit < Formula
   end
 
   test do
-    system "git", "init", "-q"
     assert_match version.to_s, shell_output("#{bin}/wt --version")
   end
 end
