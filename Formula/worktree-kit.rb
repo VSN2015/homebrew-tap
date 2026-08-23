@@ -1,13 +1,12 @@
 class WorktreeKit < Formula
   desc "Per-worktree runner: commands, servers, and DB/Redis isolation for git worktrees"
   homepage "https://github.com/VSN2015/worktree-kit"
-  url "https://github.com/VSN2015/worktree-kit/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "082a9e50d6871baa19da8400d3b3e1bb370d2ca62154dce4d2fb5eb5f78d4d85"
+  url "https://github.com/VSN2015/worktree-kit/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "9ed20f75b7cf4125c262fb8b71550f7ae6c6f1afba62d548f971c5e29c23149c"
   license "MIT"
 
-  # yq is a runtime need, not a build dependency: wt works with ANY yq v4 on
-  # PATH (brew's, or a standalone binary) and checks for it itself, so a hard
-  # depends_on would only force source builds on bottle-less systems.
+  # no dependencies: wt reads YAML with whichever of yq, ruby, or
+  # python3 + PyYAML is already on PATH (macOS ships ruby).
   def install
     # wt locates templates/ relative to its own real path, so keep the layout
     prefix.install "templates"
@@ -16,10 +15,9 @@ class WorktreeKit < Formula
 
   def caveats
     <<~EOS
-      wt needs yq v4 on your PATH at runtime. Any yq works:
-        brew install yq
-      or put a standalone binary from https://github.com/mikefarah/yq on PATH.
-      Check your setup with: wt doctor
+      wt reads its YAML config with whichever of yq, ruby, or
+      python3 + PyYAML is already on your PATH — macOS ships ruby,
+      so nothing extra is needed. Check with: wt doctor
     EOS
   end
 
