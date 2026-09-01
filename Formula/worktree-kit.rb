@@ -1,8 +1,8 @@
 class WorktreeKit < Formula
   desc "Per-worktree runner: commands, servers, and DB/Redis isolation for git worktrees"
   homepage "https://github.com/VSN2015/worktree-kit"
-  url "https://github.com/VSN2015/worktree-kit/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "bf7061b9246ec20f24e57c3fe9deffc4c6640e369e65410f21c3f149ecc4f094"
+  url "https://github.com/VSN2015/worktree-kit/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "9d578f3ff426151e37b0cb498c4c0d0a0940a861659a8d989def81fb978d2fec"
   license "MIT"
 
   # no dependencies: wt reads YAML with whichever of yq, ruby, or
